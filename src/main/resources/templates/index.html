@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>KFSM Turnstile Demo</title>
+    <link rel="stylesheet" th:href="@{/bootstrap.css}">
+    <script src="@{/bootstrap.bundle.js}"></script>
+    <style>
+        .alarm {
+            color: red;
+        }
+
+        .message {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<form action="#" th:action="@{/event}" method="post">
+    <input type="hidden" name="turnstileLocked" th:value="${turnstileLocked}"/>
+    <div class="container col-9">
+        <div class="row mt-4">
+            <div class="col-4">
+                <button id="coinButton" name="coin" class="btn btn-primary btn-lg" th:disabled="${coinDisabled}">Coin</button>
+                <button id="passButton" name="pass" class="btn btn-primary btn-lg" th:disabled="${passDisabled}">Pass</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <span class="display-4" th:text="${turnstileState}"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <span th:text="${turnstileMessage}" th:class="'display-4 ' + ${messageClass}"></span>
+            </div>
+        </div>
+    </div>
+</form>
+</body>
+</html>
