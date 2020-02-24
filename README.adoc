@@ -20,20 +20,33 @@ Visit link:http://localhost:8080/[]
 | LOCKED
 | COIN
 | UNLOCKED
-|  `{unlock()}`
+a| [source,kotlin]
+----
+{
+unlock()
+}
+----
 
 | UNLOCKED
 | PASS
 | LOCKED
-|  `{lock()}`
+a| [source,kotlin]
+----
+{
+lock()
+}
+----
 
 | UNLOCKED
 | COIN
 | UNLOCKED
-|  `{returnCoin()}`
+a| [source,kotlin]
+----
+{
+returnCoin()
+}
+----
 |===
-
-
 
 == Generated State Diagram
 
