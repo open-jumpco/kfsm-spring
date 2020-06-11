@@ -44,22 +44,22 @@ class TurnstileController {
     @GetMapping("/")
     fun index(): ModelAndView {
         val handler = TurnstileHandler(true)
-        return prepareResult(handler, null)
+        return result(handler, null)
     }
 
-    @PostMapping(path = arrayOf("/event"), params = arrayOf("pass"))
+    @PostMapping(path = ["/event"], params = ["pass"])
     fun pass(@RequestParam("turnstileLocked") locked: Boolean): ModelAndView {
         val handler = TurnstileHandler(locked)
-        return prepareResult(handler, handler.pass())
+        return result(handler, handler.pass())
     }
 
-    @PostMapping(path = arrayOf("/event"), params = arrayOf("coin"))
+    @PostMapping(path = ["/event"], params = ["coin"])
     fun coin(@RequestParam("turnstileLocked") locked: Boolean): ModelAndView {
         val handler = TurnstileHandler(locked)
-        return prepareResult(handler, handler.coin())
+        return result(handler, handler.coin())
     }
 
-    private fun prepareResult(
+    private fun result(
         handler: TurnstileHandler,
         message: String?
     ): ModelAndView {
@@ -74,7 +74,7 @@ class TurnstileController {
         result.addObject("turnstileState", turnstileState)
         result.addObject("turnstileLocked", handler.locked)
         result.addObject("turnstileMessage", message)
-        result.addObject("messageClass", if (message?.contains("Alarm") ?: false) "alarm" else "message")
+        result.addObject("messageClass", if (message?.contains("Alarm") == true) "alarm" else "message")
         return result
     }
 }

@@ -21,7 +21,7 @@ enum class TurnstileState {
     UNLOCKED
 }
 
-class TurnstileFSM(val turnstile: Turnstile) {
+class TurnstileFSM(turnstile: Turnstile) {
     companion object {
         private val definition = stateMachine(
             TurnstileState.values().toSet(),
