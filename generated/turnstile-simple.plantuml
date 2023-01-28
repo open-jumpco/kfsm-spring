@@ -8,8 +8,8 @@ skinparam state {
 }
 state TurnstileFSM {
 [*] --> UNLOCKED
-LOCKED --> UNLOCKED : COIN -> {\l  unlock()\l}
-UNLOCKED --> LOCKED : PASS -> {\l  lock()\l}
-UNLOCKED --> UNLOCKED : COIN -> {\l  returnCoin()\l}
+LOCKED --> UNLOCKED : COIN
+UNLOCKED --> LOCKED : PASS
+UNLOCKED --> UNLOCKED : COIN
 }
 @enduml
