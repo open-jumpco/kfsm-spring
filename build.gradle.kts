@@ -1,15 +1,15 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.5.3"
-    id("io.spring.dependency-management") version "1.0.11.RELEASE"
-    kotlin("jvm") version "1.5.21"
-    kotlin("plugin.spring") version "1.5.21"
-    id("io.jumpco.open.kfsm.viz-plugin") version "1.5.0"
+    id("org.springframework.boot") version "2.7.8"
+    id("io.spring.dependency-management") version "1.1.0"
+    kotlin("jvm") version "1.7.21"
+    kotlin("plugin.spring") version "1.7.21"
+    id("io.jumpco.open.kfsm.viz-plugin") version "1.5.2.4"
 }
 
 group = "com.example"
-version = "1.5.0-SNAPSHOT"
+version = "1.7.0-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
 
@@ -19,7 +19,7 @@ repositories {
 }
 
 dependencies {
-    implementation("io.jumpco.open:kfsm-jvm:1.5.1")
+    implementation("io.jumpco.open:kfsm-jvm:1.6.1")
 
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
