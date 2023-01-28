@@ -1,16 +1,17 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    id("org.springframework.boot") version "2.7.8"
+    id("org.springframework.boot") version "3.0.2"
     id("io.spring.dependency-management") version "1.1.0"
-    kotlin("jvm") version "1.7.21"
-    kotlin("plugin.spring") version "1.7.21"
+    id("org.graalvm.buildtools.native") version "0.9.18"
+    kotlin("jvm") version "1.7.22"
+    kotlin("plugin.spring") version "1.7.22"
     id("io.jumpco.open.kfsm.viz-plugin") version "1.5.2.4"
 }
 
 group = "com.example"
-version = "1.7.0-SNAPSHOT"
-java.sourceCompatibility = JavaVersion.VERSION_11
+version = "1.7.3-SNAPSHOT"
+java.sourceCompatibility = JavaVersion.VERSION_17
 
 
 repositories {
@@ -41,7 +42,7 @@ tasks.withType<Test> {
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs = listOf("-Xjsr305=strict")
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
