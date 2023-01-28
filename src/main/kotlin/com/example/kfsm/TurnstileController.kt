@@ -69,7 +69,7 @@ class TurnstileController {
             UNLOCKED -> "Unlocked"
         }
         TurnstileEvent.values().forEach { event ->
-            result.addObject("${event.name.toLowerCase()}Disabled", !handler.fsm.allowed(event))
+            result.addObject("${event.name.lowercase()}Disabled", !handler.fsm.allowed(event))
         }
         result.addObject("turnstileState", turnstileState)
         result.addObject("turnstileLocked", handler.locked)
