@@ -13,12 +13,17 @@ link:https://github.com/open-jumpco/kfsm[KFSM] with the classic Turnstile FSM.
 
 Visit link:http://localhost:8080/[]
 
-== Generated State Table
+== Generated State Models
 
 === TurnstileFSM State Map
 
 |===
 | Start | Event[Guard] | Target | Action
+
+| <<start>>
+|
+| UNLOCKED
+a|
 
 | LOCKED
 | COIN
@@ -51,9 +56,13 @@ returnCoin()
 ----
 |===
 
-== Generated State Diagram
+=== Simple Turnstile State Diagram
+image:turnstile-simple.svg[]
 
-image:turnstile.png[]
+=== Turnstile State Diagram
+image:turnstile.svg[]
+
+---
 
 To learn more about visualization visit link:https://github.com/open-jumpco/kfsm-viz[kfsm-viz] and
 link:https://github.com/open-jumpco/kfsm-viz-plugin[kfsm-viz-plugin]

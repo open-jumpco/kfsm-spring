@@ -1,0 +1,17 @@
+= Generated Turnstile Models
+
+include::generated/turnstile.adoc[]
+
+=== Turnstile Simple FSM Diagram
+
+[plantuml,target=turnstile-simple,format=svg]
+....
+include::generated/turnstile-simple.plantuml[]
+....
+
+=== Turnstile FSM Diagram
+[plantuml,target=turnstile,format=svg]
+....
+include::generated/turnstile.plantuml[]
+....
+
