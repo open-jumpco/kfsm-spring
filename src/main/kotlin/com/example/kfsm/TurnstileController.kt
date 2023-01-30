@@ -31,7 +31,7 @@ class TurnstileHandler(var _locked: Boolean) : Turnstile {
     }
 
     override fun returnCoin(): String {
-        return "Return Coin"
+        return "Coin returned"
     }
 
     override fun alarm(): String {

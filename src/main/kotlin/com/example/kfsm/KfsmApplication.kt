@@ -27,7 +27,7 @@ fun main(args: Array<String>) {
         } catch (e: UnknownHostException) {
             logger.warn("The host name could not be determined, using `localhost` as fallback")
         }
-        logger.info("start:application '{}' is running!",env.getProperty("spring.application.name"))
+        logger.info("start:application '{}' is running!",env.getProperty("spring.application.name", "kfsm-spring"))
         logger.info("start:url:local:{}://localhost:{}{}", protocol, serverPort, contextPath)
         logger.info("start:url:external:{}://{}:{}{}", protocol, hostAddress, serverPort, contextPath)
         logger.info("start:time:{}ms", duration)
